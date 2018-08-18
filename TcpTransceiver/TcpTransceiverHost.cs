@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Threading.Tasks.Dataflow;
-
 
 using System.Net;
 using System.Net.Sockets;
@@ -18,6 +15,8 @@ namespace Com.Okmer.Communication
         protected TcpClient Client { get; set; }
         protected NetworkStream Stream { get; set; }
 
+        public bool IsRunning { get; private set; } = false;
+
         public TcpTransceiverHost(int port)
         {
             Host = IPAddress.Any;
@@ -30,6 +29,8 @@ namespace Com.Okmer.Communication
         public void Start()
         {
             Listener.Start();
+            IsRunning = true;
+
             Listener.AcceptTcpClientAsync().ContinueWith(t =>
             {
                 Client = t.Result;
@@ -40,6 +41,7 @@ namespace Com.Okmer.Communication
         public void Stop()
         {
             Listener.Stop();
+            IsRunning = false;
 
             Stream?.Dispose();
             Stream = null;

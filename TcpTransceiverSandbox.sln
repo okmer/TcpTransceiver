@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpTransceiverSandbox", "TcpTransceiverSandbox\TcpTransceiverSandbox.csproj", "{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpTransceiver", "TcpTransceiver\TcpTransceiver.csproj", "{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,5 +15,9 @@ Global
 		{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}.Debug|x86.Build.0 = Debug|x86
 		{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}.Release|x86.ActiveCfg = Release|x86
 		{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}.Release|x86.Build.0 = Release|x86
+		{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}.Debug|x86.Build.0 = Debug|Any CPU
+		{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
@@ -14,27 +15,20 @@ namespace TcpTransceiverSandbox
         {
             Console.WriteLine("Tcp Transceiver Sandbox");
 
-            var host = new TcpTransceiverHost(9999);
-            host.Start();
+            TcpHostBlock hostBlock = new TcpHostBlock(9999);
+            TcpClientBlock clientBlock = new TcpClientBlock(IPAddress.Loopback, 9999);
 
-            Task hostWriter = Task.Run(() =>
+            clientBlock.ReadBlock.LinkTo(new ActionBlock<byte[]>(v =>
+            {
+                Console.Write($"{Encoding.ASCII.GetString(v)}");
+            }));
+
+            Task.Run(() => 
             {
                 int counter = 0;
                 while (true)
                 {
-                    host.WriteData(Encoding.ASCII.GetBytes($"Test text number {counter++}{Environment.NewLine}"));
-                }
-            });
-
-            var client = new TcpTransceiverClient(IPAddress.Loopback, 9999);
-            client.Connect();
-
-            Task clientReader = Task.Run(() =>
-            {
-                while (true)
-                {
-                    byte[] data = client.ReadData(1024);
-                    Console.WriteLine(Encoding.ASCII.GetString(data));
+                    hostBlock.WriteBlock.Post(Encoding.ASCII.GetBytes($"Test {counter++}{Environment.NewLine}"));
                 }
             });
 
