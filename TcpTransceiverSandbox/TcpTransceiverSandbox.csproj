@@ -35,5 +35,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TcpTransceiver\TcpTransceiver.csproj">
+      <Project>{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}</Project>
+      <Name>TcpTransceiver</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
