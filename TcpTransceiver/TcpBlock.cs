@@ -30,7 +30,10 @@ namespace Com.Okmer.Communication
                 while (Transceiver.IsConnected)
                 {
                     byte[] data = Transceiver.ReadData();
-                    ReadBlock.Post(data);
+                    if (data.Length > 0)
+                    {
+                        ReadBlock.Post(data);
+                    }
                 }
             });
         }

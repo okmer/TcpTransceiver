@@ -18,7 +18,7 @@ namespace Com.Okmer.Communication
 
             Console.WriteLine("Tcp chat host");
 
-            Console.WriteLine($"Waiting on client on port: {port}");
+            Console.WriteLine($"Waiting on a client on port: {port}");
 
             using(TcpTransceiver transceiver = TcpTransceiver.Listen(port))
             {

@@ -12,11 +12,12 @@ namespace Com.Okmer.Communication
     public class TcpTransceiver : BaseDisposable
     {
         private const int DEFAULT_BUFFER_SIZE = 1024 * 1024;
+        private byte[] buffer = new byte[DEFAULT_BUFFER_SIZE];
 
         protected TcpClient Client { get; set; }
         protected NetworkStream Stream { get; set; }
 
-        public TcpTransceiver(TcpClient client)
+        protected TcpTransceiver(TcpClient client)
         {
             Client = client;
             Stream = Client.GetStream();
@@ -26,7 +27,10 @@ namespace Com.Okmer.Communication
 
         public byte[] ReadData(int buffer_size = DEFAULT_BUFFER_SIZE)
         {
-            byte[] buffer = new byte[buffer_size];
+            if (buffer.Length != buffer_size)
+            {
+                buffer = new byte[buffer_size];
+            }
             return ReadData(ref buffer);
         }
 
