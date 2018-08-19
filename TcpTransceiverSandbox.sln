@@ -1,9 +1,11 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpTransceiverSandbox", "TcpTransceiverSandbox\TcpTransceiverSandbox.csproj", "{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpTransceiver", "TcpTransceiver\TcpTransceiver.csproj", "{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpConsoleHost", "TcpConsoleHost\TcpConsoleHost.csproj", "{1A07C3B1-C154-4FF3-A77B-56041BAC5CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpConsoleClient", "TcpConsoleClient\TcpConsoleClient.csproj", "{DE2BBF61-48CC-441C-B30F-A3E5FF1E9126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +13,17 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}.Debug|x86.ActiveCfg = Debug|x86
-		{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}.Debug|x86.Build.0 = Debug|x86
-		{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}.Release|x86.ActiveCfg = Release|x86
-		{D4C72D68-022A-4E0A-B6B1-448BD6E948CF}.Release|x86.Build.0 = Release|x86
 		{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}.Debug|x86.Build.0 = Debug|Any CPU
 		{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}.Release|x86.ActiveCfg = Release|Any CPU
 		{EA7E35F6-6BBB-4319-9F5C-77B7ED75A8EC}.Release|x86.Build.0 = Release|Any CPU
+		{1A07C3B1-C154-4FF3-A77B-56041BAC5CE6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1A07C3B1-C154-4FF3-A77B-56041BAC5CE6}.Debug|x86.Build.0 = Debug|Any CPU
+		{1A07C3B1-C154-4FF3-A77B-56041BAC5CE6}.Release|x86.ActiveCfg = Release|Any CPU
+		{1A07C3B1-C154-4FF3-A77B-56041BAC5CE6}.Release|x86.Build.0 = Release|Any CPU
+		{DE2BBF61-48CC-441C-B30F-A3E5FF1E9126}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE2BBF61-48CC-441C-B30F-A3E5FF1E9126}.Debug|x86.Build.0 = Debug|Any CPU
+		{DE2BBF61-48CC-441C-B30F-A3E5FF1E9126}.Release|x86.ActiveCfg = Release|Any CPU
+		{DE2BBF61-48CC-441C-B30F-A3E5FF1E9126}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

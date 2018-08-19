@@ -9,29 +9,27 @@ using System.Net.Sockets;
 
 namespace Com.Okmer.Communication
 {
-    public class TcpClientBlock
+    public class TcpBlock
     {
-        protected TcpTransceiverClient Client { set; get; }
+        protected TcpTransceiver Transceiver { set; get; }
 
         public BroadcastBlock<byte[]> ReadBlock = new BroadcastBlock<byte[]>(v => v);
         public ActionBlock<byte[]> WriteBlock;
 
-        public TcpClientBlock(IPAddress host, int port)
+        public TcpBlock(TcpTransceiver transceiver)
         {
-            Client = new TcpTransceiverClient(host, port);
+            Transceiver = transceiver;
 
-            WriteBlock = new ActionBlock<byte[]>(v => 
+            WriteBlock = new ActionBlock<byte[]>(v =>
             {
-                Client.WriteData(v);
+                Transceiver.WriteData(v);
             });
 
             Task.Run(() =>
             {
-                Client.Connect();
-
-                while(Client.IsConnected)
+                while (Transceiver.IsConnected)
                 {
-                    byte[] data = Client.ReadData();
+                    byte[] data = Transceiver.ReadData();
                     ReadBlock.Post(data);
                 }
             });
