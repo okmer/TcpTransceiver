@@ -15,11 +15,11 @@ namespace Com.Okmer.Communication
         static void Main(string[] args)
         {
             int port = 9999;
-            IPAddress host = IPAddress.Parse("127.0.0.1");
+            IPAddress host = IPAddress.Parse(args.Length > 0 ? args[0] : "127.0.0.1");
 
             Console.WriteLine("Tcp chat client");
 
-            Console.WriteLine($"Waiting on client on port: {port}");
+            Console.WriteLine($"Connecting to host: {host.ToString()}:{port}");
 
             using (TcpTransceiver transceiver = TcpTransceiver.Connect(host, port))
             {
