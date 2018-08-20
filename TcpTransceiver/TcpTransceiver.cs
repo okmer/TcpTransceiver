@@ -31,10 +31,10 @@ namespace Com.Okmer.Communication
             {
                 buffer = new byte[buffer_size];
             }
-            return ReadData(ref buffer);
+            return ReadData(buffer);
         }
 
-        public byte[] ReadData(ref byte[] buffer)
+        public byte[] ReadData(byte[] buffer)
         {
             int numberOfBytes = 0;
 
